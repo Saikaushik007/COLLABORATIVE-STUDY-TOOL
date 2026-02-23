@@ -1,0 +1,57 @@
+/* Global styles for Collaborative Study Hub */
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-outfit: var(--font-outfit);
+
+  --color-background: oklch(0.06 0.01 260);
+  --color-foreground: oklch(0.98 0.01 260);
+
+  --color-card: oklch(0.1 0.02 260);
+  --color-card-foreground: oklch(0.98 0.01 260);
+
+  --color-primary: oklch(0.7 0.2 280);
+  /* Vibrant Violet/Blue */
+  --color-primary-foreground: oklch(1 0 0);
+
+  --color-secondary: oklch(0.15 0.02 260);
+  --color-secondary-foreground: oklch(0.85 0.02 260);
+
+  --color-muted: oklch(0.12 0.02 260);
+  --color-muted-foreground: oklch(0.65 0.02 260);
+
+  --color-accent: oklch(0.75 0.15 150);
+  /* Aesthetic Green for success/stats */
+  --color-accent-foreground: oklch(0.1 0.02 260);
+
+  --color-border: oklch(0.15 0.02 260);
+
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2.5rem;
+
+  --shadow-premium: 0 20px 50px -12px rgb(0 0 0 / 0.5);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/30 transition-colors border-4 border-background;
+}
